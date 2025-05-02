@@ -1,0 +1,53 @@
+describe('template spec', () => {
+    it('TC01: Login- Correct username and password', () => {
+        cy.visit('https://devrcs.pinnacle.in')
+        cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
+        cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
+        cy.get('.MuiButton-contained').click()
+        cy.get('.css-rfnosa > .MuiButtonBase-root').click()
+        cy.get('.MuiList-root > .MuiButtonBase-root').click()
+    })
+    it('TC02: Login- Correct username and missing password', () => {
+        cy.visit('https://devrcs.pinnacle.in')
+        cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
+        cy.get('.MuiButton-contained').click()
+        cy.get('.MuiFormHelperText-root').should('have.text', 'Password is required')
+    })
+    it('TC03: Login- Missing username and correct password', () => {
+        cy.visit('https://devrcs.pinnacle.in')
+        cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
+        cy.get('.MuiButton-contained').click()
+        cy.get('#mui-2-helper-text').should('have.text', 'Username is required')
+    })
+    it('TC04: Login- Missing username and missing password', () => {
+        cy.visit('https://devrcs.pinnacle.in')
+        cy.get('.MuiButton-contained').click()
+        cy.get('#mui-2-helper-text').should('have.text', 'Username is required')
+        cy.get('.css-tzsjye > .MuiFormHelperText-root').should('have.text', 'Password is required')
+    })
+    it('TC05: Login- Correct username and In-Correct password', () => {
+        cy.visit('https://devrcs.pinnacle.in')
+        cy.get('.MuiButton-contained').click()
+        cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
+        cy.get('#outlined-adornment-password').type('xyz')
+        cy.get('.MuiButton-contained').click()
+        cy.get('form > .MuiPaper-root').should('have.text', 'Password is not matching')
+    })
+    it('TC06: Login- In-Correct username and correct password', () => {
+        cy.visit('https://devrcs.pinnacle.in')
+        cy.get('.MuiButton-contained').click()
+        cy.get('#mui-2').type('vinodakhatri@pinnacle.in')
+        cy.get('#outlined-adornment-password').type('xyz')
+        cy.get('.MuiButton-contained').click()
+        cy.get('form > .MuiPaper-root').should('have.text', 'This username vinodakhatri@pinnacle.in was not found')
+    })
+    it('TC07: Login- Correct username and password but space in front of them', () => {
+        cy.visit('https://devrcs.pinnacle.in')
+        cy.get('.MuiButton-contained').click()
+        cy.get('#mui-2').type('vinoda.khatri@pinnacle.in ')
+        cy.get('#outlined-adornment-password').type('PinnacleRCS@2024 ')
+        cy.get('.MuiButton-contained').click()
+        cy.get('form > .MuiPaper-root').should('have.text', 'This username vinoda.khatri@pinnacle.in  was not found')
+    })
+
+})
