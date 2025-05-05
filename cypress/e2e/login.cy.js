@@ -1,4 +1,5 @@
 describe('template spec', () => {
+    // Complete test cases for Login page (Forgot password remaining)
     it('TC01: Login- Correct username and password', () => {
         cy.visit('https://devrcs.pinnacle.in')
         cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')

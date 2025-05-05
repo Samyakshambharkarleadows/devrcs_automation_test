@@ -1,5 +1,5 @@
 describe('template spec', () => {
-    it('TC01: Ideal condition of Add Campaign', () => {
+    it('TC01: Ideal condition of Add New Campaign', () => {
         cy.visit('https://devrcs.pinnacle.in')
         cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
         cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
@@ -26,6 +26,7 @@ describe('template spec', () => {
         cy.get('.css-gtc9zh > .MuiButtonBase-root').click()
 
         cy.get(':nth-child(6) > :nth-child(2)').click(); 
+        // Selecting file from local location when pulled in any others 
         cy.get('input[type="file"]').selectFile("C:\\Users\\leado\\OneDrive\\Desktop\\Cypress-Folders\\cypress-rcs\\officeNumbers1.csv", { force: true });
         cy.wait(2000);
         cy.get('.MuiCardContent-root > .css-v3z1wi > :nth-child(1) > .MuiButtonBase-root').click();
