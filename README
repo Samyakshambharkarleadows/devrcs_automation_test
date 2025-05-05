@@ -1,0 +1,11 @@
+THIS IS AUTOMATION TESTING CODE WRITTEN ON DEV RCS STAGING PANEL: devrcs.pinnacle.in 
+======================================================================================
+// To run this code first install cypress. 
+npm install cypress --save-dev 
+
+// To run the cypress 
+npx cypress open
+
+// If Powershell doesnt allow to run this command 
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process 
+
