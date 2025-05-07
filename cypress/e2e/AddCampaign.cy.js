@@ -1,9 +1,14 @@
+import { validLogin } from '../support/loginHelper'    // This is the imported Login file that decreases the Time and efforts and increases effeciency.
+    beforeEach(() => {
+        validLogin()
+      })
+
 describe('template spec', () => {
     it('TC01: Ideal condition of Add New Campaign', () => {
-        cy.visit('https://devrcs.pinnacle.in')
-        cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
-        cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
-        cy.get('.MuiButton-contained').click()
+        // cy.visit('https://devrcs.pinnacle.in')
+        // cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
+        // cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
+        // cy.get('.MuiButton-contained').click()
 
         // Click on RCS Management and select Campaigns
         cy.get(':nth-child(3) > .MuiListItemText-root > .MuiTypography-root').click()

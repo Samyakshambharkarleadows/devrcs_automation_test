@@ -1,10 +1,15 @@
+import { validLogin } from '../support/loginHelper'    // This is the imported Login file that decreases the Time and efforts and increases effeciency.
+    beforeEach(() => {
+        validLogin()
+      })
+
 describe('template spec', () => {
     // ==============TEST CASE (1): TEXT CARD =========================== 
     it('TC01: Create Text template', () => {
-        cy.visit('https://devrcs.pinnacle.in')
-        cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
-        cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
-        cy.get('.MuiButton-contained').click()
+        // cy.visit('https://devrcs.pinnacle.in')
+        // cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
+        // cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
+        // cy.get('.MuiButton-contained').click()
 
         // Click on RCS Management and select Templates
         cy.get(':nth-child(3) > .MuiListItemText-root > .MuiTypography-root').click()
@@ -40,10 +45,10 @@ describe('template spec', () => {
 
     // ==============TEST CASE (2): RICH CARD STAND ALONE=========================== 
     it('TC02: Create Rich Card standalone template', () => {
-        cy.visit('https://devrcs.pinnacle.in')
-        cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
-        cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
-        cy.get('.MuiButton-contained').click()
+        // cy.visit('https://devrcs.pinnacle.in')
+        // cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
+        // cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
+        // cy.get('.MuiButton-contained').click()
 
         // Click on RCS Management and select Templates
         cy.get(':nth-child(3) > .MuiListItemText-root > .MuiTypography-root').click()
@@ -88,10 +93,10 @@ describe('template spec', () => {
 
     // ==============TEST CASE (3): RICH CARD CAROUSEL=========================== 
     it('TC03: Create Rich Card Carousel template', () => {
-        cy.visit('https://devrcs.pinnacle.in')
-        cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
-        cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
-        cy.get('.MuiButton-contained').click()
+        // cy.visit('https://devrcs.pinnacle.in')
+        // cy.get('#mui-2').type('vinoda.khatri@pinnacle.in')
+        // cy.get('#outlined-adornment-password').type('PinnacleRCS@2024')
+        // cy.get('.MuiButton-contained').click()
 
         // Click on RCS Management and select Templates
         cy.get(':nth-child(3) > .MuiListItemText-root > .MuiTypography-root').click()
